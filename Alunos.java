@@ -29,6 +29,8 @@ public class Alunos {
             if(i == 0){
                 maiorNota = nota[i];
                 menorNota = nota[i];
+                indiceMaior = i;
+                indiceMenor = i;
             } else {
                 if(nota[i] > maiorNota){
                     maiorNota = nota[i];
@@ -41,7 +43,7 @@ public class Alunos {
             }
         }
     
-        notasAlunos(nome, nota);
+        exibirAlunos(nome, nota);
 
         resultado(quantidade, nome, nota, maiorNota, menorNota, soma, indiceMaior, indiceMenor);
 
@@ -55,18 +57,18 @@ public class Alunos {
         return quantidade;
     }
 
-    public static void notasAlunos(String[] nome, double[] nota) {
+    public static void exibirAlunos(String[] nome, double[] nota) {
 
-        System.out.println("\n---RESULTADO---");
+        System.out.println("\n--- DADOS DOS ALUNOS ---");
         for (int i = 0; i < nome.length; i++) {
-            System.out.println("Aluno: " + nome[i] + "- Nota: " + nota[i]);
+            System.out.println("Aluno: " + nome[i] + " - Nota: " + nota[i]);
         }
     }
     
     public static void resultado(int quantidade, String[] nome, double[] nota, double maiorNota, double menorNota, double soma, int indiceMaior, int indiceMenor) {
 
-         System.out.println("\n");
-         System.out.printf("Média turma: %.2f\n", (soma / quantidade));
+         System.out.println();
+         System.out.printf("Média da turma: %.2f\n", (soma / quantidade));
          System.out.println("Maior nota: " + nome[indiceMaior] + " - " + maiorNota);
          System.out.println("Menor nota: " + nome[indiceMenor] + " - " + menorNota);
     }
